@@ -1,0 +1,36 @@
+[project]
+name = "flight-jupyter-notebooks"
+version = "0.1.0"
+description = "Research notebooks, exploratory simulations and MATLAB/Octave experiments."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "wmalek", email = "wiktoria.malek@cern.ch"}]
+dependencies = [
+    "numpy>=2.4.2,<3",
+    "matplotlib>=3.10.8,<4",
+    "scipy>=1.17.1,<2",
+    "rf-track>=2.6.2,<3",
+    "pandas>=3.0.2,<4",
+    "h5py>=3,<4",
+    "cpymad>=1,<2",
+    "scikit-optimize>=0.10,<1",
+    "botorch>=0.17,<1",
+    "jupyterlab>=4,<5",
+    "ipykernel>=6,<8"
+]
+
+[project.optional-dependencies]
+gui-experiments = ["PyQt6>=6.10.2,<7"]
+optimization-example = ["xopt>=3.0.0,<4"]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.flight-simulator.migration]
+status = "file-layout-prepared-import-migration-pending"
+repository-dependencies = ["machine-interfaces", "response-matrix", "emittance-measurement"]
+optional-repository-integrations = ["system-identification", "beam-based-alignment", "atf2-knobs"]
