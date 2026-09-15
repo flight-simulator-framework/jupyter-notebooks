@@ -17,13 +17,13 @@ dependencies = [
     "botorch>=0.17,<1",
     "jupyterlab>=4,<5",
     "ipykernel>=6,<8",
-    "machine-interfaces[epics,madx,rftrack,tao]>=0.1.0,<0.2.0",
-    "flight-response-matrix>=0.1.0,<0.2.0"
+    "machine-interfaces[epics,madx,rftrack,tao] @ git+https://gitlab.cern.ch/flight-simulator/machine-interfaces.git@54490bf072d3db26d98383eeeced1a759e1d4bbb",
+    "flight-response-matrix @ git+https://gitlab.cern.ch/flight-simulator/response-matrix.git@61de1dfd2719999c01ed613726483132ff9654ca"
 ]
 
 [project.optional-dependencies]
-emittance-analysis = ["flight-emittance-measurement>=0.1.0,<0.2.0"]
-gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification>=0.1.0,<0.2.0", "flight-beam-based-alignment>=0.1.0,<0.2.0", "flight-atf2-knobs>=0.1.0,<0.2.0"]
+emittance-analysis = ["flight-emittance-measurement @ git+https://gitlab.cern.ch/flight-simulator/emittance-measurement.git@e3192787e4f867b7a1b61a2886a67438eb1186f7"]
+gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification @ git+https://gitlab.cern.ch/flight-simulator/system-identification.git@cf14104bb7c92a9b3d47e2aa7d23f6dfa7525331", "flight-beam-based-alignment @ git+https://gitlab.cern.ch/flight-simulator/beam-based-alignment.git@e341614b1ddc894f7d0e42cd2a49c375d8055be3", "flight-atf2-knobs @ git+https://gitlab.cern.ch/flight-simulator/atf2-knobs.git@eec2004565e8622a08797058fcee9d6888a930f5"]
 optimization-example = ["xopt>=3.0.0,<4"]
 
 [build-system]
@@ -32,15 +32,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 package-mode = false
-
-[tool.poetry.dependencies]
-flight-emittance-measurement = {path = "../emittance-measurement", develop = true, optional = true}
-machine-interfaces = {path = "../machine-interfaces", develop = true, extras = ["epics", "madx", "rftrack", "tao"]}
-flight-response-matrix = {path = "../response-matrix", develop = true}
-
-flight-system-identification = {path = "../system-identification", develop = true, optional = true}
-flight-beam-based-alignment = {path = "../beam-based-alignment", develop = true, optional = true}
-flight-atf2-knobs = {path = "../atf2-knobs", develop = true, optional = true}
 
 [tool.flight-simulator.migration]
 status = "local-execution-ready"
