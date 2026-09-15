@@ -16,11 +16,14 @@ dependencies = [
     "scikit-optimize>=0.10,<1",
     "botorch>=0.17,<1",
     "jupyterlab>=4,<5",
-    "ipykernel>=6,<8"
+    "ipykernel>=6,<8",
+    "machine-interfaces[epics,madx,rftrack,tao]>=0.1.0,<0.2.0",
+    "flight-response-matrix>=0.1.0,<0.2.0"
 ]
 
 [project.optional-dependencies]
-gui-experiments = ["PyQt6>=6.10.2,<7"]
+emittance-analysis = ["flight-emittance-measurement>=0.1.0,<0.2.0"]
+gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification>=0.1.0,<0.2.0", "flight-beam-based-alignment>=0.1.0,<0.2.0", "flight-atf2-knobs>=0.1.0,<0.2.0"]
 optimization-example = ["xopt>=3.0.0,<4"]
 
 [build-system]
@@ -30,7 +33,16 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 package-mode = false
 
+[tool.poetry.dependencies]
+flight-emittance-measurement = {path = "../emittance-measurement", develop = true, optional = true}
+machine-interfaces = {path = "../machine-interfaces", develop = true, extras = ["epics", "madx", "rftrack", "tao"]}
+flight-response-matrix = {path = "../response-matrix", develop = true}
+
+flight-system-identification = {path = "../system-identification", develop = true, optional = true}
+flight-beam-based-alignment = {path = "../beam-based-alignment", develop = true, optional = true}
+flight-atf2-knobs = {path = "../atf2-knobs", develop = true, optional = true}
+
 [tool.flight-simulator.migration]
-status = "file-layout-prepared-import-migration-pending"
-repository-dependencies = ["machine-interfaces", "response-matrix", "emittance-measurement"]
-optional-repository-integrations = ["system-identification", "beam-based-alignment", "atf2-knobs"]
+status = "local-execution-ready"
+repository-dependencies = ["machine-interfaces", "response-matrix"]
+optional-repository-integrations = ["emittance-measurement", "system-identification", "beam-based-alignment", "atf2-knobs"]

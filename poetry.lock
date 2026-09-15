@@ -4,10 +4,9 @@
 name = "annotated-types"
 version = "0.7.0"
 description = "Reusable constraint types to use with typing.Annotated"
-optional = true
+optional = false
 python-versions = ">=3.8"
 groups = ["main"]
-markers = "extra == \"optimization-example\""
 files = [
     {file = "annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"},
     {file = "annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"},
@@ -960,6 +959,120 @@ files = [
     {file = "filelock-3.29.0-py3-none-any.whl", hash = "sha256:96f5f6344709aa1572bbf631c640e4ebeeb519e08da902c39a001882f30ac258"},
     {file = "filelock-3.29.0.tar.gz", hash = "sha256:69974355e960702e789734cb4871f884ea6fe50bd8404051a3530bc07809cf90"},
 ]
+
+[[package]]
+name = "flight-atf2-knobs"
+version = "0.1.0"
+description = "ATF2 IPBSM optimization, beam tuning, linac optimization and synthetic controllers."
+optional = true
+python-versions = ">=3.11"
+groups = ["main"]
+markers = "extra == \"gui-experiments\""
+files = []
+develop = true
+
+[package.dependencies]
+machine-interfaces = {version = ">=0.1.0,<0.2.0", extras = ["epics", "madx", "rftrack", "tao"]}
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+PyQt6 = ">=6.10.2,<7"
+
+[package.source]
+type = "directory"
+url = "../atf2-knobs"
+
+[[package]]
+name = "flight-beam-based-alignment"
+version = "0.1.0"
+description = "Beam based alignment with correctors or quadrupole movers."
+optional = true
+python-versions = ">=3.11"
+groups = ["main"]
+markers = "extra == \"gui-experiments\""
+files = []
+develop = true
+
+[package.dependencies]
+flight-response-matrix = ">=0.1.0,<0.2.0"
+machine-interfaces = {version = ">=0.1.0,<0.2.0", extras = ["epics", "madx", "rftrack", "tao"]}
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+PyQt6 = ">=6.10.2,<7"
+
+[package.source]
+type = "directory"
+url = "../beam-based-alignment"
+
+[[package]]
+name = "flight-emittance-measurement"
+version = "0.1.0"
+description = "Emittance measurement, quadrupole scans and model training."
+optional = true
+python-versions = ">=3.11"
+groups = ["main"]
+markers = "extra == \"emittance-analysis\""
+files = []
+develop = true
+
+[package.dependencies]
+flight-response-matrix = ">=0.1.0,<0.2.0"
+machine-interfaces = {version = ">=0.1.0,<0.2.0", extras = ["epics", "madx", "rftrack", "tao"]}
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+pandas = ">=3.0.2,<4"
+PyQt6 = ">=6.10.2,<7"
+rf-track = ">=2.6.2,<3"
+scikit-learn = ">=1.8.0,<2"
+scipy = ">=1.17.1,<2"
+torch = ">=2.7.1,<3"
+
+[package.extras]
+atf2-examples = ["pyepics (>=1.0,<4)"]
+
+[package.source]
+type = "directory"
+url = "../emittance-measurement"
+
+[[package]]
+name = "flight-response-matrix"
+version = "0.1.0"
+description = "Offline response matrix reconstruction from recorded machine snapshots."
+optional = false
+python-versions = ">=3.11"
+groups = ["main"]
+files = []
+develop = true
+
+[package.dependencies]
+machine-interfaces = ">=0.1.0,<0.2.0"
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+PyQt6 = ">=6.10.2,<7"
+
+[package.source]
+type = "directory"
+url = "../response-matrix"
+
+[[package]]
+name = "flight-system-identification"
+version = "0.1.0"
+description = "Machine excitation and acquisition for corrector and quadrupole-mover system identification."
+optional = true
+python-versions = ">=3.11"
+groups = ["main"]
+markers = "extra == \"gui-experiments\""
+files = []
+develop = true
+
+[package.dependencies]
+machine-interfaces = {version = ">=0.1.0,<0.2.0", extras = ["epics", "madx", "rftrack", "tao"]}
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+PyQt6 = ">=6.10.2,<7"
+
+[package.source]
+type = "directory"
+url = "../system-identification"
 
 [[package]]
 name = "fonttools"
@@ -1918,6 +2031,62 @@ docs = ["myst-parser", "setuptools_scm", "six", "sphinx", "sphinx-autodoc-typehi
 test = ["flake8 (==5.0.4)", "flake8-print (==5.0.0)", "pytest"]
 
 [[package]]
+name = "machine-interfaces"
+version = "0.1.0"
+description = "Machine interface contract, accelerator adapters, registry and interface selector."
+optional = false
+python-versions = ">=3.11"
+groups = ["main"]
+files = []
+develop = true
+
+[package.dependencies]
+cpymad = {version = ">=1,<2", optional = true}
+matplotlib = ">=3.10.8,<4"
+numpy = ">=2.4.2,<3"
+pyepics = {version = ">=1.0,<4", optional = true}
+PyQt6 = ">=6.10.2,<7"
+pytao = {version = ">=0.5,<2", optional = true}
+rf-track = {version = ">=2.6.2,<3", optional = true}
+scipy = ">=1.17.1,<2"
+
+[package.extras]
+analysis = ["h5py (>=3,<4)"]
+camera-reference = ["pillow (>=12.1.1,<13)"]
+epics = ["pyepics (>=1.0,<4)"]
+madx = ["cpymad (>=1,<2)"]
+rftrack = ["rf-track (>=2.6.2,<3)"]
+tao = ["pytao (>=0.5,<2)"]
+
+[package.source]
+type = "directory"
+url = "../machine-interfaces"
+
+[[package]]
+name = "markdown-it-py"
+version = "4.2.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "markdown_it_py-4.2.0-py3-none-any.whl", hash = "sha256:9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a"},
+    {file = "markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"},
+]
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "markdown-it-pyrs", "mistletoe (>=1.0,<2.0)", "mistune (>=3.0,<4.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins (>=0.5.0)"]
+profiling = ["gprof2dot"]
+rtd = ["ipykernel", "jupyter_sphinx", "mdit-py-plugins (>=0.5.0)", "myst-parser", "pyyaml", "sphinx", "sphinx-book-theme (>=1.0,<2.0)", "sphinx-copybutton", "sphinx-design"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions", "pytest-timeout", "requests"]
+
+[[package]]
 name = "markupsafe"
 version = "3.0.3"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -2112,6 +2281,18 @@ traitlets = "*"
 
 [package.extras]
 test = ["flake8", "nbdime", "nbval", "notebook", "pytest"]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
+    {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
+]
 
 [[package]]
 name = "minrpc"
@@ -2896,6 +3077,29 @@ files = [
 ]
 
 [[package]]
+name = "openpmd-beamphysics"
+version = "0.16.1"
+description = "Tools for analyzing and viewing particle data in the openPMD standard, extension beamphysics."
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "openpmd_beamphysics-0.16.1-py3-none-any.whl", hash = "sha256:d7c27537794ac3acf15dbdc38e513286109d58675607825a85d7c70b5b72404e"},
+    {file = "openpmd_beamphysics-0.16.1.tar.gz", hash = "sha256:6350d3c2cd7d2b3df3e669ec17fc9a556e0d6a52ecb88cf0640fc6cc1fa80420"},
+]
+
+[package.dependencies]
+h5py = "*"
+matplotlib = "*"
+numpy = "*"
+python-dateutil = "*"
+scipy = ">=1.0.0"
+
+[package.extras]
+dev = ["pint", "pytest", "pytest-benchmark", "pytest-cov", "pyyaml"]
+doc = ["mkdocs", "mkdocs-jupyter", "mkdocs-macros-plugin", "mkdocs-material", "mkdocstrings", "mkdocstrings-python"]
+
+[[package]]
 name = "opt-einsum"
 version = "3.4.0"
 description = "Path optimization of einsum functions."
@@ -2911,10 +3115,9 @@ files = [
 name = "orjson"
 version = "3.11.8"
 description = "Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy"
-optional = true
+optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-markers = "extra == \"optimization-example\""
 files = [
     {file = "orjson-3.11.8-cp310-cp310-macosx_10_15_x86_64.macosx_11_0_arm64.macosx_10_15_universal2.whl", hash = "sha256:e6693ff90018600c72fd18d3d22fa438be26076cd3c823da5f63f7bab28c11cb"},
     {file = "orjson-3.11.8-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:93de06bc920854552493c81f1f729fab7213b7db4b8195355db5fda02c7d1363"},
@@ -2990,6 +3193,65 @@ files = [
     {file = "orjson-3.11.8-cp314-cp314-win_amd64.whl", hash = "sha256:735e2262363dcbe05c35e3a8869898022af78f89dde9e256924dc02e99fe69ca"},
     {file = "orjson-3.11.8-cp314-cp314-win_arm64.whl", hash = "sha256:6ccdea2c213cf9f3d9490cbd5d427693c870753df41e6cb375bd79bcbafc8817"},
     {file = "orjson-3.11.8.tar.gz", hash = "sha256:96163d9cdc5a202703e9ad1b9ae757d5f0ca62f4fa0cc93d1f27b0e180cc404e"},
+]
+
+[[package]]
+name = "ormsgpack"
+version = "1.12.2"
+description = "Fast, correct Python msgpack library supporting dataclasses, datetimes, and numpy"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "ormsgpack-1.12.2-cp310-cp310-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:c1429217f8f4d7fcb053523bbbac6bed5e981af0b85ba616e6df7cce53c19657"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5f13034dc6c84a6280c6c33db7ac420253852ea233fc3ee27c8875f8dd651163"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:59f5da97000c12bc2d50e988bdc8576b21f6ab4e608489879d35b2c07a8ab51a"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9e4459c3f27066beadb2b81ea48a076a417aafffff7df1d3c11c519190ed44f2"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:7a1c460655d7288407ffa09065e322a7231997c0d62ce914bf3a96ad2dc6dedd"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-musllinux_1_2_armv7l.whl", hash = "sha256:458e4568be13d311ef7d8877275e7ccbe06c0e01b39baaac874caaa0f46d826c"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:8cde5eaa6c6cbc8622db71e4a23de56828e3d876aeb6460ffbcb5b8aff91093b"},
+    {file = "ormsgpack-1.12.2-cp310-cp310-win_amd64.whl", hash = "sha256:dc7a33be14c347893edbb1ceda89afbf14c467d593a5ee92c11de4f1666b4d4f"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:bd5f4bf04c37888e864f08e740c5a573c4017f6fd6e99fa944c5c935fabf2dd9"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:34d5b28b3570e9fed9a5a76528fc7230c3c76333bc214798958e58e9b79cc18a"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:3708693412c28f3538fb5a65da93787b6bbab3484f6bc6e935bfb77a62400ae5"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:43013a3f3e2e902e1d05e72c0f1aeb5bedbb8e09240b51e26792a3c89267e181"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:7c8b1667a72cbba74f0ae7ecf3105a5e01304620ed14528b2cb4320679d2869b"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-musllinux_1_2_armv7l.whl", hash = "sha256:df6961442140193e517303d0b5d7bc2e20e69a879c2d774316125350c4a76b92"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:c6a4c34ddef109647c769d69be65fa1de7a6022b02ad45546a69b3216573eb4a"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-win_amd64.whl", hash = "sha256:73670ed0375ecc303858e3613f407628dd1fca18fe6ac57b7b7ce66cc7bb006c"},
+    {file = "ormsgpack-1.12.2-cp311-cp311-win_arm64.whl", hash = "sha256:c2be829954434e33601ae5da328cccce3266b098927ca7a30246a0baec2ce7bd"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:7a29d09b64b9694b588ff2f80e9826bdceb3a2b91523c5beae1fab27d5c940e7"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0b39e629fd2e1c5b2f46f99778450b59454d1f901bc507963168985e79f09c5d"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:958dcb270d30a7cb633a45ee62b9444433fa571a752d2ca484efdac07480876e"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:58d379d72b6c5e964851c77cfedfb386e474adee4fd39791c2c5d9efb53505cc"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:8463a3fc5f09832e67bdb0e2fda6d518dc4281b133166146a67f54c08496442e"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-musllinux_1_2_armv7l.whl", hash = "sha256:eddffb77eff0bad4e67547d67a130604e7e2dfbb7b0cde0796045be4090f35c6"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:fcd55e5f6ba0dbce624942adf9f152062135f991a0126064889f68eb850de0dd"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-win_amd64.whl", hash = "sha256:d024b40828f1dde5654faebd0d824f9cc29ad46891f626272dd5bfd7af2333a4"},
+    {file = "ormsgpack-1.12.2-cp312-cp312-win_arm64.whl", hash = "sha256:da538c542bac7d1c8f3f2a937863dba36f013108ce63e55745941dda4b75dbb6"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:5ea60cb5f210b1cfbad8c002948d73447508e629ec375acb82910e3efa8ff355"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f3601f19afdbea273ed70b06495e5794606a8b690a568d6c996a90d7255e51c1"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:29a9f17a3dac6054c0dce7925e0f4995c727f7c41859adf9b5572180f640d172"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:39c1bd2092880e413902910388be8715f70b9f15f20779d44e673033a6146f2d"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:50b7249244382209877deedeee838aef1542f3d0fc28b8fe71ca9d7e1896a0d7"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-musllinux_1_2_armv7l.whl", hash = "sha256:5af04800d844451cf102a59c74a841324868d3f1625c296a06cc655c542a6685"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:cec70477d4371cd524534cd16472d8b9cc187e0e3043a8790545a9a9b296c258"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-win_amd64.whl", hash = "sha256:21f4276caca5c03a818041d637e4019bc84f9d6ca8baa5ea03e5cc8bf56140e9"},
+    {file = "ormsgpack-1.12.2-cp313-cp313-win_arm64.whl", hash = "sha256:baca4b6773d20a82e36d6fd25f341064244f9f86a13dead95dd7d7f996f51709"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:bc68dd5915f4acf66ff2010ee47c8906dc1cf07399b16f4089f8c71733f6e36c"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:46d084427b4132553940070ad95107266656cb646ea9da4975f85cb1a6676553"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:c010da16235806cf1d7bc4c96bf286bfa91c686853395a299b3ddb49499a3e13"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:18867233df592c997154ff942a6503df274b5ac1765215bceba7a231bea2745d"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:b009049086ddc6b8f80c76b3955df1aa22a5fbd7673c525cd63bf91f23122ede"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-musllinux_1_2_armv7l.whl", hash = "sha256:1dcc17d92b6390d4f18f937cf0b99054824a7815818012ddca925d6e01c2e49e"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-musllinux_1_2_x86_64.whl", hash = "sha256:f04b5e896d510b07c0ad733d7fce2d44b260c5e6c402d272128f8941984e4285"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-win_amd64.whl", hash = "sha256:ae3aba7eed4ca7cb79fd3436eddd29140f17ea254b91604aa1eb19bfcedb990f"},
+    {file = "ormsgpack-1.12.2-cp314-cp314-win_arm64.whl", hash = "sha256:118576ea6006893aea811b17429bfc561b4778fad393f5f538c84af70b01260c"},
+    {file = "ormsgpack-1.12.2-cp314-cp314t-macosx_10_12_x86_64.macosx_11_0_arm64.macosx_10_12_universal2.whl", hash = "sha256:7121b3d355d3858781dc40dafe25a32ff8a8242b9d80c692fd548a4b1f7fd3c8"},
+    {file = "ormsgpack-1.12.2-cp314-cp314t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4ee766d2e78251b7a63daf1cddfac36a73562d3ddef68cacfb41b2af64698033"},
+    {file = "ormsgpack-1.12.2-cp314-cp314t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:292410a7d23de9b40444636b9b8f1e4e4b814af7f1ef476e44887e52a123f09d"},
+    {file = "ormsgpack-1.12.2-cp314-cp314t-win_amd64.whl", hash = "sha256:837dd316584485b72ef451d08dd3e96c4a11d12e4963aedb40e08f89685d8ec2"},
+    {file = "ormsgpack-1.12.2.tar.gz", hash = "sha256:944a2233640273bee67521795a73cf1e959538e0dfb7ac635505010455e53b33"},
 ]
 
 [[package]]
@@ -3404,10 +3666,9 @@ files = [
 name = "pydantic"
 version = "2.13.3"
 description = "Data validation using Python type hints"
-optional = true
+optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "extra == \"optimization-example\""
 files = [
     {file = "pydantic-2.13.3-py3-none-any.whl", hash = "sha256:6db14ac8dfc9a1e57f87ea2c0de670c251240f43cb0c30a5130e9720dc612927"},
     {file = "pydantic-2.13.3.tar.gz", hash = "sha256:af09e9d1d09f4e7fe37145c1f577e1d61ceb9a41924bf0094a36506285d0a84d"},
@@ -3427,10 +3688,9 @@ timezone = ["tzdata ; python_version >= \"3.9\" and platform_system == \"Windows
 name = "pydantic-core"
 version = "2.46.3"
 description = "Core functionality for Pydantic validation and serialization"
-optional = true
+optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "extra == \"optimization-example\""
 files = [
     {file = "pydantic_core-2.46.3-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:1da3786b8018e60349680720158cc19161cc3b4bdd815beb0a321cd5ce1ad5b1"},
     {file = "pydantic_core-2.46.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:cc0988cb29d21bf4a9d5cf2ef970b5c0e38d8d8e107a493278c05dc6c1dda69f"},
@@ -3558,6 +3818,27 @@ files = [
 typing-extensions = ">=4.14.1"
 
 [[package]]
+name = "pyepics"
+version = "3.5.10"
+description = "Epics Channel Access for Python"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "pyepics-3.5.10-py3-none-any.whl", hash = "sha256:c9fac2c54f2b595268e66fc348cf5ec24e63718e7dbd07d73d1b37d4da6bfee1"},
+    {file = "pyepics-3.5.10.tar.gz", hash = "sha256:f390cf9be40aba757b9528888114bc14d8db01086d0c93914720b1772460375b"},
+]
+
+[package.dependencies]
+numpy = ">=1.26"
+pyparsing = "*"
+
+[package.extras]
+all = ["pyepics[doc,test]"]
+doc = ["Sphinx", "numpydoc"]
+test = ["coverage", "psutil ; platform_system == \"Linux\"", "pytest", "pytest-cov"]
+
+[[package]]
 name = "pygments"
 version = "2.20.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -3591,10 +3872,9 @@ diagrams = ["jinja2", "railroad-diagrams"]
 name = "pyqt6"
 version = "6.11.0"
 description = "Python bindings for the Qt cross platform application toolkit"
-optional = true
+optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-markers = "extra == \"gui-experiments\""
 files = [
     {file = "pyqt6-6.11.0-cp310-abi3-macosx_10_14_universal2.whl", hash = "sha256:f7100bc7f72b12581ec479a733f4ad11b8002668e6786e8a445ab6f4d1c743d4"},
     {file = "pyqt6-6.11.0-cp310-abi3-manylinux_2_34_x86_64.whl", hash = "sha256:8555277989fa7d114cb3c3443fd261d566909f7268ceedd41d93a5f02d37ec05"},
@@ -3612,10 +3892,9 @@ PyQt6-sip = ">=13.8,<14"
 name = "pyqt6-qt6"
 version = "6.11.2"
 description = "The subset of a Qt installation needed by PyQt6."
-optional = true
+optional = false
 python-versions = "*"
 groups = ["main"]
-markers = "extra == \"gui-experiments\""
 files = [
     {file = "pyqt6_qt6-6.11.2-py3-none-macosx_10_14_x86_64.whl", hash = "sha256:6a4372baa674ca91de5caf31f241b0660fd3da90fe27fefed9a7a459e630ea89"},
     {file = "pyqt6_qt6-6.11.2-py3-none-macosx_11_0_arm64.whl", hash = "sha256:4f21ff2ffaacfb8a8df6ab1d619d0da7aa4e808e86f41b6daa1a7bff9c0d6eab"},
@@ -3629,10 +3908,9 @@ files = [
 name = "pyqt6-sip"
 version = "13.12.0"
 description = "The sip module support for PyQt6"
-optional = true
+optional = false
 python-versions = ">=3.10"
 groups = ["main"]
-markers = "extra == \"gui-experiments\""
 files = [
     {file = "pyqt6_sip-13.12.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:24e9e5a7fcac6a957f74d136cc44f52d6c526d50ed9a5f9be980fe3a4f1edec1"},
     {file = "pyqt6_sip-13.12.0-cp310-cp310-manylinux1_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:00f670fbebf811a835257353d1facc8da6e33951d904865d172e0d46d12fc898"},
@@ -3720,6 +3998,33 @@ horovod = ["horovod[pytorch] (>=0.19)"]
 lightning = ["lightning"]
 profile = ["prettytable", "pytest-benchmark", "snakeviz"]
 test = ["black (>=21.4b0)", "graphviz (>=0.8)", "ipywidgets", "matplotlib (>=1.3)", "nbval", "notebook", "pandas", "pillow (>=8.3.1)", "pytest (>=5.0)", "pytest-cov", "pytest-xdist", "ruff", "scikit-learn", "scipy (>=1.1)", "seaborn (>=0.11.0)", "torchvision (>=0.15.0)", "visdom (>=0.1.4,<0.2.2)", "wget"]
+
+[[package]]
+name = "pytao"
+version = "1.2.4"
+description = "PyTao is the Python interface for Bmad's Tao"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "pytao-1.2.4.tar.gz", hash = "sha256:c0e3ce30d049904a10bd75e30ebb1ec7a51bba3a4fb1a217dde49c2116389869"},
+]
+
+[package.dependencies]
+h5py = "*"
+ipython = "*"
+matplotlib = "*"
+numpy = "*"
+openpmd-beamphysics = ">=0.14.1"
+orjson = "*"
+ormsgpack = ">=1.12.2"
+pydantic = ">=2.12.5"
+pyyaml = "*"
+rich = "*"
+tqdm = "*"
+
+[package.extras]
+test = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "python-dateutil"
@@ -4078,6 +4383,25 @@ lark = ">=1.2.2"
 
 [package.extras]
 testing = ["pytest (>=8.3.5)"]
+
+[[package]]
+name = "rich"
+version = "15.0.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+optional = false
+python-versions = ">=3.9.0"
+groups = ["main"]
+files = [
+    {file = "rich-15.0.0-py3-none-any.whl", hash = "sha256:33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb"},
+    {file = "rich-15.0.0.tar.gz", hash = "sha256:edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"},
+]
+
+[package.dependencies]
+markdown-it-py = ">=2.2.0"
+pygments = ">=2.13.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<9)"]
 
 [[package]]
 name = "rpds-py"
@@ -4814,10 +5138,9 @@ typing-extensions = ">=3.7.4"
 name = "typing-inspection"
 version = "0.4.2"
 description = "Runtime typing introspection tools"
-optional = true
+optional = false
 python-versions = ">=3.9"
 groups = ["main"]
-markers = "extra == \"optimization-example\""
 files = [
     {file = "typing_inspection-0.4.2-py3-none-any.whl", hash = "sha256:4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"},
     {file = "typing_inspection-0.4.2.tar.gz", hash = "sha256:ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464"},
@@ -4973,10 +5296,11 @@ dev = ["dask[distributed]", "ffmpeg", "jupyterlab (>=3)", "jupyterlab-lsp", "lib
 doc = ["mkdocs", "mkdocs-jupyter", "mkdocs-macros-plugin", "mkdocs-material", "mkdocstrings", "mkdocstrings-python"]
 
 [extras]
-gui-experiments = ["PyQt6"]
+emittance-analysis = ["flight-emittance-measurement"]
+gui-experiments = ["PyQt6", "flight-atf2-knobs", "flight-beam-based-alignment", "flight-system-identification"]
 optimization-example = ["xopt"]
 
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "5a45935b885a1eec2798ee8a770f00840fb9132a9f23b70fee30bd55dc31ab11"
+content-hash = "0ff2bdb0d0a0f9ded5070c6ca62b53dd459045946e4bca5fb10171280739f091"

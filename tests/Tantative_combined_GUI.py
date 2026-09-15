@@ -1,3 +1,4 @@
+import machine_interfaces
 # UnifiedGUI.py
 import sys
 import os
@@ -10,7 +11,7 @@ from datetime import datetime
 
 from SysID_GUI import MainWindow as SysIDWindow
 from BBA_GUI import MainWindow as BBAWindow
-from BeamTuning_GUI import MainWindow as BeamTuniggWindow
+from Knobs.GUIs.BeamTuning_GUI import MainWindow as BeamTuniggWindow
 
 
 class EmittingStream:
@@ -36,7 +37,7 @@ class UnifiedGUI(QMainWindow):
 
         self.setWindowTitle("Unified GUI")
         try:
-            self.setWindowIcon(QIcon("SysID_GUI/CERN_logo.png"))
+            self.setWindowIcon(QIcon(os.path.join(os.path.dirname(machine_interfaces.__file__), "UI files", "Assets", "CERN_logo.png")))
         except Exception:
             pass
 
@@ -112,7 +113,7 @@ class UnifiedGUI(QMainWindow):
 # --------- 単体起動用 ---------
 if __name__ == "__main__":
     # 既存の選択ダイアログがある前提
-    from Backend.SelectInterface import InterfaceSelectionDialog
+    from machine_interfaces.Backend.SelectInterface import InterfaceSelectionDialog
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--only-tab", type=str, default=None)
