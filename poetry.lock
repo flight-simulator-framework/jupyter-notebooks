@@ -972,7 +972,7 @@ files = []
 develop = false
 
 [package.dependencies]
-machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "54490bf072d3db26d98383eeeced1a759e1d4bbb", extras = ["epics", "madx", "rftrack", "tao"]}
+machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "1fa7fca06f949e085353030f59587a68de7e3baf", extras = ["epics", "madx", "rftrack", "tao"]}
 matplotlib = ">=3.10.8,<4"
 numpy = ">=2.4.2,<3"
 PyQt6 = ">=6.10.2,<7"
@@ -980,8 +980,8 @@ PyQt6 = ">=6.10.2,<7"
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/atf2-knobs.git"
-reference = "eec2004565e8622a08797058fcee9d6888a930f5"
-resolved_reference = "eec2004565e8622a08797058fcee9d6888a930f5"
+reference = "74476a132e30289f03fdaa9a2e5a3cbd65ad79a7"
+resolved_reference = "74476a132e30289f03fdaa9a2e5a3cbd65ad79a7"
 
 [[package]]
 name = "flight-beam-based-alignment"
@@ -995,8 +995,8 @@ files = []
 develop = false
 
 [package.dependencies]
-flight-response-matrix = {git = "https://gitlab.cern.ch/flight-simulator/response-matrix.git", rev = "61de1dfd2719999c01ed613726483132ff9654ca"}
-machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "54490bf072d3db26d98383eeeced1a759e1d4bbb", extras = ["epics", "madx", "rftrack", "tao"]}
+flight-response-matrix = {git = "https://gitlab.cern.ch/flight-simulator/response-matrix.git", rev = "7d8b2b3199e55807758e32e6c08a258b6bbbd63f"}
+machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "1fa7fca06f949e085353030f59587a68de7e3baf", extras = ["epics", "madx", "rftrack", "tao"]}
 matplotlib = ">=3.10.8,<4"
 numpy = ">=2.4.2,<3"
 PyQt6 = ">=6.10.2,<7"
@@ -1004,8 +1004,8 @@ PyQt6 = ">=6.10.2,<7"
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/beam-based-alignment.git"
-reference = "e341614b1ddc894f7d0e42cd2a49c375d8055be3"
-resolved_reference = "e341614b1ddc894f7d0e42cd2a49c375d8055be3"
+reference = "ffb5bf59dbc9b2fd438c90a7e6e9840441c633f7"
+resolved_reference = "ffb5bf59dbc9b2fd438c90a7e6e9840441c633f7"
 
 [[package]]
 name = "flight-emittance-measurement"
@@ -1019,8 +1019,8 @@ files = []
 develop = false
 
 [package.dependencies]
-flight-response-matrix = {git = "https://gitlab.cern.ch/flight-simulator/response-matrix.git", rev = "61de1dfd2719999c01ed613726483132ff9654ca"}
-machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "54490bf072d3db26d98383eeeced1a759e1d4bbb", extras = ["epics", "madx", "rftrack", "tao"]}
+flight-response-matrix = {git = "https://gitlab.cern.ch/flight-simulator/response-matrix.git", rev = "7d8b2b3199e55807758e32e6c08a258b6bbbd63f"}
+machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "1fa7fca06f949e085353030f59587a68de7e3baf", extras = ["epics", "madx", "rftrack", "tao"]}
 matplotlib = ">=3.10.8,<4"
 numpy = ">=2.4.2,<3"
 pandas = ">=3.0.2,<4"
@@ -1036,8 +1036,8 @@ atf2-examples = ["pyepics (>=1.0,<4)"]
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/emittance-measurement.git"
-reference = "e3192787e4f867b7a1b61a2886a67438eb1186f7"
-resolved_reference = "e3192787e4f867b7a1b61a2886a67438eb1186f7"
+reference = "4e4bdab9128470d997da2fbf28fff118a033e18f"
+resolved_reference = "4e4bdab9128470d997da2fbf28fff118a033e18f"
 
 [[package]]
 name = "flight-response-matrix"
@@ -1050,7 +1050,7 @@ files = []
 develop = false
 
 [package.dependencies]
-machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "54490bf072d3db26d98383eeeced1a759e1d4bbb"}
+machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "1fa7fca06f949e085353030f59587a68de7e3baf"}
 matplotlib = ">=3.10.8,<4"
 numpy = ">=2.4.2,<3"
 PyQt6 = ">=6.10.2,<7"
@@ -1058,8 +1058,8 @@ PyQt6 = ">=6.10.2,<7"
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/response-matrix.git"
-reference = "61de1dfd2719999c01ed613726483132ff9654ca"
-resolved_reference = "61de1dfd2719999c01ed613726483132ff9654ca"
+reference = "7d8b2b3199e55807758e32e6c08a258b6bbbd63f"
+resolved_reference = "7d8b2b3199e55807758e32e6c08a258b6bbbd63f"
 
 [[package]]
 name = "flight-system-identification"
@@ -1073,7 +1073,7 @@ files = []
 develop = false
 
 [package.dependencies]
-machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "54490bf072d3db26d98383eeeced1a759e1d4bbb", extras = ["epics", "madx", "rftrack", "tao"]}
+machine-interfaces = {git = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git", rev = "1fa7fca06f949e085353030f59587a68de7e3baf", extras = ["epics", "madx", "rftrack", "tao"]}
 matplotlib = ">=3.10.8,<4"
 numpy = ">=2.4.2,<3"
 PyQt6 = ">=6.10.2,<7"
@@ -1081,8 +1081,8 @@ PyQt6 = ">=6.10.2,<7"
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/system-identification.git"
-reference = "cf14104bb7c92a9b3d47e2aa7d23f6dfa7525331"
-resolved_reference = "cf14104bb7c92a9b3d47e2aa7d23f6dfa7525331"
+reference = "96d98cea137a25a40337d12f79edfda568b14aa2"
+resolved_reference = "96d98cea137a25a40337d12f79edfda568b14aa2"
 
 [[package]]
 name = "fonttools"
@@ -2071,8 +2071,8 @@ tao = ["pytao (>=0.5,<2)"]
 [package.source]
 type = "git"
 url = "https://gitlab.cern.ch/flight-simulator/machine-interfaces.git"
-reference = "54490bf072d3db26d98383eeeced1a759e1d4bbb"
-resolved_reference = "54490bf072d3db26d98383eeeced1a759e1d4bbb"
+reference = "1fa7fca06f949e085353030f59587a68de7e3baf"
+resolved_reference = "1fa7fca06f949e085353030f59587a68de7e3baf"
 
 [[package]]
 name = "markdown-it-py"
@@ -5315,4 +5315,4 @@ optimization-example = ["xopt"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "5e1b595302666ab7ba8ba82eb60fe7772a751ec1abc41cdaaee422afb124e70d"
+content-hash = "e7d0ca468fe48ba799ca3cc67e4f62c8f20ea28c7b2b8c2f2339dc860854d71d"

@@ -17,13 +17,13 @@ dependencies = [
     "botorch>=0.17,<1",
     "jupyterlab>=4,<5",
     "ipykernel>=6,<8",
-    "machine-interfaces[epics,madx,rftrack,tao] @ git+https://gitlab.cern.ch/flight-simulator/machine-interfaces.git@54490bf072d3db26d98383eeeced1a759e1d4bbb",
-    "flight-response-matrix @ git+https://gitlab.cern.ch/flight-simulator/response-matrix.git@61de1dfd2719999c01ed613726483132ff9654ca"
+    "machine-interfaces[epics,madx,rftrack,tao] @ git+https://gitlab.cern.ch/flight-simulator/machine-interfaces.git@1fa7fca06f949e085353030f59587a68de7e3baf",
+    "flight-response-matrix @ git+https://gitlab.cern.ch/flight-simulator/response-matrix.git@7d8b2b3199e55807758e32e6c08a258b6bbbd63f"
 ]
 
 [project.optional-dependencies]
-emittance-analysis = ["flight-emittance-measurement @ git+https://gitlab.cern.ch/flight-simulator/emittance-measurement.git@e3192787e4f867b7a1b61a2886a67438eb1186f7"]
-gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification @ git+https://gitlab.cern.ch/flight-simulator/system-identification.git@cf14104bb7c92a9b3d47e2aa7d23f6dfa7525331", "flight-beam-based-alignment @ git+https://gitlab.cern.ch/flight-simulator/beam-based-alignment.git@e341614b1ddc894f7d0e42cd2a49c375d8055be3", "flight-atf2-knobs @ git+https://gitlab.cern.ch/flight-simulator/atf2-knobs.git@eec2004565e8622a08797058fcee9d6888a930f5"]
+emittance-analysis = ["flight-emittance-measurement @ git+https://gitlab.cern.ch/flight-simulator/emittance-measurement.git@4e4bdab9128470d997da2fbf28fff118a033e18f"]
+gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification @ git+https://gitlab.cern.ch/flight-simulator/system-identification.git@96d98cea137a25a40337d12f79edfda568b14aa2", "flight-beam-based-alignment @ git+https://gitlab.cern.ch/flight-simulator/beam-based-alignment.git@ffb5bf59dbc9b2fd438c90a7e6e9840441c633f7", "flight-atf2-knobs @ git+https://gitlab.cern.ch/flight-simulator/atf2-knobs.git@74476a132e30289f03fdaa9a2e5a3cbd65ad79a7"]
 optimization-example = ["xopt>=3.0.0,<4"]
 
 [build-system]
