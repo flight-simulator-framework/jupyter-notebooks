@@ -1,6 +1,6 @@
 [project]
 name = "flight-jupyter-notebooks"
-version = "0.1.0"
+version = "0.2.0"
 description = "Research notebooks, exploratory simulations and MATLAB/Octave experiments."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -12,19 +12,44 @@ dependencies = [
     "rf-track>=2.6.2,<3",
     "pandas>=3.0.2,<4",
     "h5py>=3,<4",
-    "cpymad>=1,<2",
     "scikit-optimize>=0.10,<1",
     "botorch>=0.17,<1",
     "jupyterlab>=4,<5",
     "ipykernel>=6,<8",
-    "machine-interfaces[epics,madx,rftrack,tao] @ git+https://gitlab.cern.ch/flight-simulator/machine-interfaces.git@1fa7fca06f949e085353030f59587a68de7e3baf",
-    "flight-response-matrix @ git+https://gitlab.cern.ch/flight-simulator/response-matrix.git@7d8b2b3199e55807758e32e6c08a258b6bbbd63f"
+    "machine-interfaces>=0.2.0,<0.3",
+    "flight-response-matrix>=0.2.0,<0.3",
 ]
 
 [project.optional-dependencies]
-emittance-analysis = ["flight-emittance-measurement @ git+https://gitlab.cern.ch/flight-simulator/emittance-measurement.git@4e4bdab9128470d997da2fbf28fff118a033e18f"]
-gui-experiments = ["PyQt6>=6.10.2,<7", "flight-system-identification @ git+https://gitlab.cern.ch/flight-simulator/system-identification.git@96d98cea137a25a40337d12f79edfda568b14aa2", "flight-beam-based-alignment @ git+https://gitlab.cern.ch/flight-simulator/beam-based-alignment.git@ffb5bf59dbc9b2fd438c90a7e6e9840441c633f7", "flight-atf2-knobs @ git+https://gitlab.cern.ch/flight-simulator/atf2-knobs.git@74476a132e30289f03fdaa9a2e5a3cbd65ad79a7"]
-optimization-example = ["xopt>=3.0.0,<4"]
+emittance-analysis = [
+    "flight-emittance-measurement>=0.2.0,<0.3",
+]
+gui-experiments = [
+    "PyQt6>=6.10.2,<7",
+    "flight-system-identification>=0.2.0,<0.3",
+    "flight-beam-based-alignment>=0.2.0,<0.3",
+    "flight-atf2-knobs>=0.2.0,<0.3",
+]
+optimization-example = [
+    "xopt>=3.0.0,<4",
+]
+clear = [
+    "machine-interfaces-clear>=0.2.0,<0.3",
+    "pyda (>=1.1.0,<1.2) ; python_version >= \"3.11\" and python_version < \"4\"",
+    "pyda-japc (>=1.1.0,<1.2) ; python_version >= \"3.11\" and python_version < \"4\"",
+    "pyrbac (>=1.0,<2) ; python_version >= \"3.11\" and python_version < \"4\"",
+    "pyccda (>=1.29.4) ; python_version >= \"3.11\" and python_version < \"4\"",
+    "cmmnbuild-dep-manager (>=2.13,<3) ; python_version >= \"3.11\" and python_version < \"4\"",
+]
+atf2 = [
+    "machine-interfaces-atf2>=0.2.0,<0.3",
+]
+facet2 = [
+    "machine-interfaces-facet2>=0.2.0,<0.3",
+]
+esrf = [
+    "machine-interfaces-esrf>=0.2.0,<0.3",
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -33,6 +58,26 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 package-mode = false
 
+[tool.poetry.dependencies]
+machine-interfaces = {path = "../machine-interfaces", develop = true}
+flight-response-matrix = {path = "../response-matrix", develop = true}
+flight-emittance-measurement = {path = "../emittance-measurement", develop = true}
+flight-system-identification = {path = "../system-identification", develop = true}
+flight-beam-based-alignment = {path = "../beam-based-alignment", develop = true}
+flight-atf2-knobs = {path = "../atf2-knobs", develop = true}
+machine-interfaces-clear = {path = "../machine-interfaces/backends/clear", develop = true}
+machine-interfaces-atf2 = {path = "../machine-interfaces/backends/atf2", develop = true}
+machine-interfaces-facet2 = {path = "../machine-interfaces/backends/facet2", develop = true}
+machine-interfaces-esrf = {path = "../machine-interfaces/backends/esrf", develop = true}
+pyda = {source = "cern-acc-py", python = ">=3.11,<4"}
+pyda-japc = {source = "cern-acc-py", python = ">=3.11,<4"}
+pyrbac = {source = "cern-acc-py", python = ">=3.11,<4"}
+pyccda = {source = "cern-acc-py", python = ">=3.11,<4"}
+cmmnbuild-dep-manager = {source = "cern-acc-py", python = ">=3.11,<4"}
+[[tool.poetry.source]]
+name = "cern-acc-py"
+url = "https://acc-py-repo.cern.ch/repository/vr-py-releases/simple/"
+priority = "explicit"
 [tool.flight-simulator.migration]
 status = "local-execution-ready"
 repository-dependencies = ["machine-interfaces", "response-matrix"]
