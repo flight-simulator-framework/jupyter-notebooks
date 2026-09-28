@@ -5,8 +5,6 @@ This repository contains tests and notebooks created for further developments an
 
 
 ```bash
-git clone https://gitlab.cern.ch/flight-simulator/machine-interfaces.git
-git clone https://gitlab.cern.ch/flight-simulator/response-matrix.git
 git clone https://gitlab.cern.ch/flight-simulator/jupyter-notebooks.git
 cd jupyter-notebooks
 poetry update rf-track --lock
