@@ -8,6 +8,7 @@ Use Python 3.11 or newer and Poetry 2 or newer.
 ```bash
 git clone https://gitlab.cern.ch/flight-simulator/jupyter-notebooks.git
 cd jupyter-notebooks
+poetry update rf-track --lock
 poetry install
 poetry run jupyter lab
 ```
