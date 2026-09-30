@@ -1032,7 +1032,7 @@ atf2 = ["machine-interfaces-atf2 (>=0.2.0,<0.3)"]
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -1062,7 +1062,7 @@ facet2 = ["machine-interfaces-facet2 (>=0.2.0,<0.3)"]
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -1097,7 +1097,7 @@ facet2 = ["machine-interfaces-facet2 (>=0.2.0,<0.3)"]
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -1120,7 +1120,7 @@ PyQt6 = ">=6.10.2,<7"
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -1149,7 +1149,7 @@ facet2 = ["machine-interfaces-facet2 (>=0.2.0,<0.3)"]
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -2194,7 +2194,7 @@ camera-reference = ["pillow (>=12.1.1,<13)"]
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -2217,7 +2217,7 @@ rf-track = ">=2.6.2,<3"
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -2243,7 +2243,7 @@ rf-track = ">=2.6.2,<3"
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -2265,7 +2265,7 @@ pytango = ">=10.3.1,<11"
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -2288,7 +2288,7 @@ rf-track = ">=2.6.2,<3"
 
 [package.source]
 type = "legacy"
-url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple/"
+url = "https://gitlab.cern.ch/api/v4/groups/363527/-/packages/pypi/simple"
 reference = "flight-simulator"
 
 [[package]]
@@ -4778,38 +4778,30 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<8)"]
 
 [[package]]
 name = "rf-track"
-version = "2.6.2"
+version = "2.7.3"
 description = "The CERN tracking code RF-Track"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "rf_track-2.6.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:be3a29ba4b206d27a971b802f8044fde2105a6ea0cb00b10ef66d4826de04d6e"},
-    {file = "rf_track-2.6.2-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:502932472a1020c683c69b5bbced0bf0dadf7600b67e50bc5a08935d26dac741"},
-    {file = "rf_track-2.6.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:02c6e6057044d4a1222144d82e07bfe37c4c0f0d134f8312ee3b2faaf83f1b01"},
-    {file = "rf_track-2.6.2-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:4a4c02c3d617225f5f7084abb86f0544e034a60b39ba3a31ca923f5b19c02d2d"},
-    {file = "rf_track-2.6.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:59e1bf7810c4189c76c42f5be5d3cd7780f33bad8b6832128da99339d8bf8ae6"},
-    {file = "rf_track-2.6.2-cp311-cp311-macosx_11_0_x86_64.whl", hash = "sha256:64462152cbd6567731effc48397ea27013af8e4df0f1c7d1dda5dcb0b6168b5f"},
-    {file = "rf_track-2.6.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:5224743674d06ce75042b8fba648cb95712f19403c229ece03965bdb6b2d2cd6"},
-    {file = "rf_track-2.6.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:11ce3d8d344e132394c444b18a8b0da65217341f3f34088169e369c32e38deea"},
-    {file = "rf_track-2.6.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:62a8da73de3c67b0935711f26e6f3118335683098a9b5924051e968ef134b704"},
-    {file = "rf_track-2.6.2-cp312-cp312-macosx_11_0_x86_64.whl", hash = "sha256:b3721f7cc9d2582c418e1fde54853d0b7d81ae85dd3dd9706777cb5b1ddc773b"},
-    {file = "rf_track-2.6.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:0afc96a172f126bb0eac94f0ff755d6b04c582e0d793e5a261a6e0c8fc4d684d"},
-    {file = "rf_track-2.6.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:a91ab348b3b43fa3d30fb50f0dc598062a0b713b354d92348527c5422935d6c1"},
-    {file = "rf_track-2.6.2-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:5941ebee0cdabbeb72d5355c0de93f9be6cba6a16d59798f29605be9563d9649"},
-    {file = "rf_track-2.6.2-cp313-cp313-macosx_11_0_x86_64.whl", hash = "sha256:7b818f11ee3d47b6cb0b4b160dc27fffa281223399f9ffe1b7ae32321b74f9be"},
-    {file = "rf_track-2.6.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:4fde9ea631ac5bf737cc25c27aeb1cdbf6bfb2bd0318fef12ca40d336ae0c525"},
-    {file = "rf_track-2.6.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d684d3075a8b52219ffa48a9b590fdc560aa93cefa8295fbb9c046b174783b1a"},
-    {file = "rf_track-2.6.2-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:3895c8c33cae615d87a3259a68b044a0359d27ec2f23e0d7af76cb7b05e42de4"},
-    {file = "rf_track-2.6.2-cp314-cp314-macosx_11_0_x86_64.whl", hash = "sha256:84c1fd263a022f5fcbf085e36d8b73de00b1dee68edc51570e94b345c5caf405"},
-    {file = "rf_track-2.6.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1e7e2fd1f18b24e1e7e6257c5c4bdd7632f8dd4a1e805fa6926a1e3f69a4d87c"},
-    {file = "rf_track-2.6.2-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:c4d7986e7ce4094da636370c3f1bf7ebaeb696dd6269423eb4e7ac35cb1ebd26"},
-    {file = "rf_track-2.6.2-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:a7009237c3ee8c323d04a783c84788f8c8b4e407f43ba193566302cc581e32a5"},
-    {file = "rf_track-2.6.2-cp38-cp38-macosx_11_0_x86_64.whl", hash = "sha256:688dacb9cfce1ba8fb253d1c90fe8653ff5d8752b70ee7401ad5d38002707472"},
-    {file = "rf_track-2.6.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:67ffc194465e4580058916329f6a32489efb4da6cf9093b64dae1383b2bad583"},
-    {file = "rf_track-2.6.2-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:0d329eb70f81f9180a3a71771da65faa76895a6e0c3e470ba61fbd1bf78d1c27"},
-    {file = "rf_track-2.6.2-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:e187935e0b007f4a4079f847cbc2ced4a9c4d222a1c1a0653c78f1c52af40621"},
-    {file = "rf_track-2.6.2-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:19fc418e07395c025b5ca21c9f266c78ccc6623cef22f6d837f979f3ddbe54a8"},
+    {file = "rf_track-2.7.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:97b4c8fa6de823309e0df9bff90a35230fac9a9b6ddbd4225048bf4aa2ae6c58"},
+    {file = "rf_track-2.7.3-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:dde159b8f5a031d451b4288afa42290a69140b0c6efc7e770c471aa07a738e06"},
+    {file = "rf_track-2.7.3-cp310-cp310-win_amd64.whl", hash = "sha256:327c9224d944957d9f0674c9a7af2c17877bb31ab0d988b7f72b5e298a4ca8d2"},
+    {file = "rf_track-2.7.3-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:0badadf530497b38020b78804208d247da61a0806b12807d7e8ca1a943f75e0d"},
+    {file = "rf_track-2.7.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:33d8acab4484a390bef3bd8bcd2af64b8de8e6ada92e39a67826968b0e500e9c"},
+    {file = "rf_track-2.7.3-cp311-cp311-win_amd64.whl", hash = "sha256:27fd3b35d770adbd34c546ea75988b3f90a329a7b26d82d185a6db0ae89bacf9"},
+    {file = "rf_track-2.7.3-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:29da6c2e7d1a1b9c5865cbdc8f1f09115e758fc8252decf97d7be3852b104169"},
+    {file = "rf_track-2.7.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:f85d8b3fc67adf7da4fa872f86d63fbc4765d50ecd1ac249d2442a3dbcca053a"},
+    {file = "rf_track-2.7.3-cp312-cp312-win_amd64.whl", hash = "sha256:d1d63bc32ad94e6615571b4253ff40a5992d98d9184b0a5eda80e5b8761a7758"},
+    {file = "rf_track-2.7.3-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:a8f712e3efd8726bce553cf53a66773874b64b478791dc058f5d445a7387ca8e"},
+    {file = "rf_track-2.7.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:a4a83d7b3883e5c3073e6a65608af162fd3c56a802091679a9b94eaad172dd69"},
+    {file = "rf_track-2.7.3-cp313-cp313-win_amd64.whl", hash = "sha256:ba43dbdbb0eb374092d1b496ad554345856e9a2a22d9856fed58cb5e62e47ef1"},
+    {file = "rf_track-2.7.3-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:94513ace3a4029e0372cdc0fdb3e903508e828c2c718d2eae9a5c00b8fcce40b"},
+    {file = "rf_track-2.7.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:3af0b98be797c23c419edc626552ed66a153449ea5cc6a5b4c69c7188836eb14"},
+    {file = "rf_track-2.7.3-cp314-cp314-win_amd64.whl", hash = "sha256:009e97df3cbf9211f6ce48afeed22f45df391b46519d476cf227b66c12c6c303"},
+    {file = "rf_track-2.7.3-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:57c59ce612ec441a7792d5816281251589f5b3064dc3655e66f394388457c6ab"},
+    {file = "rf_track-2.7.3-cp39-cp39-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:6f2de763a908ad567df62c13af1667e45b46ceadce072c8f3db73ec22c0ed86b"},
+    {file = "rf_track-2.7.3-cp39-cp39-win_amd64.whl", hash = "sha256:277458f545b6748612a6d474864f5aefcc434bd6c35db3f0e6bd01a119f1598d"},
 ]
 
 [package.dependencies]
